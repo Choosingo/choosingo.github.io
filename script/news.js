@@ -280,6 +280,13 @@ function toZero(a){
 
 	return a;
 }
+function biggest(a,b){
+	if(a>b){
+		return a;
+	}else{
+		return b;
+	}
+}
 
 
 function news_at_page(neww){
@@ -327,10 +334,8 @@ function addPages(DOMelement,page){
 	if(fp){
 		for(i=0;i<max_show_pages;i++){
 			generatePage(DOMelement,page,0);
-		}
-		if(show_pages<max_show_pages){
-			generatePage(DOMelement,page,'>');
-		}
+		}			
+		generatePage(DOMelement,page,'>');
 	}else if(lp){
 		generatePage(DOMelement,page,'<');
 		for(i=toZero(page-max_show_pages)+1;i<page;i++){
@@ -338,12 +343,13 @@ function addPages(DOMelement,page){
 		}
 		generatePage(DOMelement,page,'number',page);
 	}else{
+
 		generatePage(DOMelement,page,'<');
-		for(i=toZero(page-max_show_pages/2)+1;i<page;i++){
+		for(i=page-max_show_news_at_page/2+1;i<page;i++){
 			generatePage(DOMelement,page,'number',i);
 		}
 		generatePage(DOMelement,page,'number',page);
-		for(i=page+1;i<page+max_show_pages/2;i++){
+		for(i=page+1;i<page+max_show_news_at_page/2;i++){
 			generatePage(DOMelement,page,'number',i);
 		}
 
