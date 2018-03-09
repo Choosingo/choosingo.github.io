@@ -280,6 +280,11 @@ function toZero(a){
 
 	return a;
 }
+function toOne(a){
+	if(a<1) return 1;
+
+	return a;
+}
 function biggest(a,b){
 	if(a>b){
 		return a;
@@ -332,20 +337,20 @@ function addPages(DOMelement,page){
 
 
 	if(fp){
-		for(i=0;i<max_show_pages;i++){
+		for(i=0;i<max_show_pages/2+1;i++){
 			generatePage(DOMelement,page,0);
 		}			
 		generatePage(DOMelement,page,'>');
 	}else if(lp){
 		generatePage(DOMelement,page,'<');
-		for(i=toZero(page-max_show_pages)+1;i<page;i++){
+		for(i=toZero(page-max_show_pages/2)+1;i<page;i++){
 			generatePage(DOMelement,page,'number',i);
 		}
 		generatePage(DOMelement,page,'number',page);
 	}else{
 
 		generatePage(DOMelement,page,'<');
-		for(i=page-max_show_news_at_page/2+1;i<page;i++){
+		for(i=toZero(page-max_show_pages/2)+1;i<page;i++){
 			generatePage(DOMelement,page,'number',i);
 		}
 		generatePage(DOMelement,page,'number',page);
