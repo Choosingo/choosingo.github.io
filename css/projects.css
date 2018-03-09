@@ -1,0 +1,19 @@
+table {
+	border: 2px solid white;
+	font: 15px 'Noto Serif';
+	color: rgb(255,205,235);
+}
+tr {
+	border: 2px solid white;
+}
+td {
+	border: 2px solid white;
+	padding: 5px;
+	text-align: center;
+}
+ok {
+	background-image: url('../img/ok.png');
+}
+wait {
+	background-image: url('../img/wait.png');
+}
